@@ -16,11 +16,13 @@ Or the given array is an empty list or a list with only 1 element, return 0.
 
 function sumArray(array) {
   if (array === null) return 0;
-  return array
-    .sort((a, b) => {
-      a - b;
-    })
-    .slice(1, -1)
-    .reduce((previous, current) => previous + current, 0);
+  return (
+    array
+      .sort((a, b) => {
+        a - b;
+      })
+      // .slice(1, -1)
+      .reduce((previous, current) => previous + current, 0)
+  );
 }
 console.log(sumArray([6, 2, 1, 1, 10, 8, 10]));
