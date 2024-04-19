@@ -14,6 +14,10 @@ sumMul(4, -7)  ==> "INVALID"
 */
 
 function sumMul(n, m) {
+  if (m < 0 || m == 0 || n == 0) return "INVALID";
+  let final = 0;
+  for (let i = n; i <= m; i += n) final += i;
+  return final;
 }
 
-console.log(sumMul(2, 9));
+console.log(sumMul(2, 9)); //expected 751680 to equal 741312
