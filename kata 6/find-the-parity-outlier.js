@@ -10,11 +10,10 @@
 function findOutlier(integers) {
   let odd = [];
   let even = [];
-  for (let i = 0; i < integers.length; i++) {
+  for (let i = 0; i < integers.length; i++)
     if (integers[i] % 2 || -2 == 1) odd.push(integers[i]);
     else even.push(integers[i]);
-  }
   return odd.length > even.length ? even[0] : odd[0];
 }
 
-console.log(findOutlier([1, 2, 3])); //3
+console.log(findOutlier([1, 2, 3]));
