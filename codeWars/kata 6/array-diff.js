@@ -10,7 +10,11 @@
 
 function arrayDiff(a, b) {
   let final = [];
-  for (let i = 0; i < a.length; i++) if (!b.includes(a[i])) final.push(a[i]);
+  for (let i = 0; i < a.length; i++) {
+    if (!b.includes(a[i])) {
+      final.push(a[i]);
+    }
+  }
   return final;
 }
 

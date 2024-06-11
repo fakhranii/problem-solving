@@ -6,4 +6,4 @@ function oddOrEven(num) {
   return num % 2 === 0 ? "Even" : "Odd";
 }
 
-console.log(oddOrEven(8));
+console.log(oddOrEven(0));
