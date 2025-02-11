@@ -25,5 +25,50 @@ Constraints:
 s consists only of printable ASCII characters.
 
  */
+function isPalindrome(s: string): any {
+  let removed: string[] = [
+    "\\",
+    "{",
+    "}",
+    "[",
+    "]",
+    "'",
+    ".",
+    ",",
+    ":",
+    ";",
+    "-",
+    "!",
+    "@",
+    "$",
+    "#",
+    "%",
+    "^",
+    "&",
+    "*",
+    "_",
+    "+",
+    "=",
+    "=",
+    " ",
+    `"`,
+    "?",
+    "؟",
+    ",",
+    "(",
+    ")",
+    "`",
+  ];
+  const str = s
+    .toLowerCase()
+    .split("")
+    .filter((val) => !removed.includes(val))
+    .reverse()
+    .join("");
 
-// function isPalindrome(s: string): boolean {}
+  return str == str.split("").reverse().join("");
+}
+console.log(
+  "🚀 ~ isPalindrome ~ isPalindrome:",
+  isPalindrome("Damosel, a poem? A carol? Or a cameo pale? (So mad!)")
+);
