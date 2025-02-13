@@ -24,13 +24,21 @@ Follow up: Suppose there are lots of incoming s, say s1, s2, ..., sk where k >= 
 */
 
 function isSubsequence(s: string, t: string): boolean {
-  return (
-    s
-      .split("")
-      .filter((val) => t.split("").includes(val))
-      .join("") === s
-  );
+  let sPointer = 0;
+  let tPointer = 0;
+
+  while (tPointer < t.length) {
+    if (s[sPointer] === t[tPointer]) {
+      sPointer++;
+    }
+    if (sPointer === s.length) {
+      return true;
+    }
+    tPointer++;
+  }
+  return false;
 }
+
 console.log(
   "🚀 ~ isSubsequence ~ isSubsequence:",
   isSubsequence("abc", "ahbgdc")
