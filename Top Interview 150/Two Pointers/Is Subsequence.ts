@@ -24,19 +24,17 @@ Follow up: Suppose there are lots of incoming s, say s1, s2, ..., sk where k >= 
 */
 
 function isSubsequence(s: string, t: string): boolean {
-  let sPointer = 0;
-  let tPointer = 0;
+  let i = 0,
+    j = 0;
 
-  while (tPointer < t.length) {
-    if (s[sPointer] === t[tPointer]) {
-      sPointer++;
+  while (j < t.length) {
+    if (i < s.length && s[i] === t[j]) {
+      i++; // Move pointer in s if there's a match
     }
-    if (sPointer === s.length) {
-      return true;
-    }
-    tPointer++;
+    j++; // Always move pointer in t
   }
-  return false;
+
+  return i === s.length;
 }
 
 console.log(
